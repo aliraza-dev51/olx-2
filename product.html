@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <button class="back-btn" onclick="window.history.back()">← Back</button>
+    <button class="back-btn" onclick="goBack()">← Back</button>
     <div class="product-detail-wrapper">
       <div class="product-detail-left" id="product-image-section"></div>
       <div class="product-detail-right" id="product-info-section"></div>
@@ -54,6 +54,14 @@
       }
 
       if (productId) fetchProductDetail(productId);
+
+      function goBack() {
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = 'index.html';
+        }
+      }
     </script>
   </body>
 </html>
